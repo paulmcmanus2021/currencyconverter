@@ -4,19 +4,18 @@ document.addEventListener("DOMContentLoaded", () => {
   new Vue({
     el: "#app",
     data: {
-      allData: null,
-      exchangeRates: {}
+      rates: null
     },
 
     mounted(){
-      this.getAllData()
+      this.getRates()
     },
 
     methods: {
-      getAllData: function(){
+      getRates: function(){
         fetch("https://api.exchangeratesapi.io/latest")
         .then(response => response.json())
-        .then(allData => this.allData = allData.rates)
+        .then(data => this.rates = data.rates)
       },
     }
   })

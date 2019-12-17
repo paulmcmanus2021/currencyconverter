@@ -12,15 +12,27 @@
 
   <div id="app">
 
-    <h2>Live Exchange Rates</h2>
+    <h2>Live Exchange Rates for Euros</h2>
 
       <ul id="rates" class="ratesList">
-        <li v-for="(value, name) in allData">
+        <li v-for="(value, name) in rates">
           {{name}}:{{ value }}
         </li>
       </ul>
 
-  </div>
+    <div id="currencyConverter">
+      <h3>Converter</h3>
+        <input type="number" v-model.number="amountToConvert" /> Euros in:
+          <select id="euroToCurrency" v-model="selectedCurrency">
+            <option disabled value="">Select a Currency</option>
+            <option v-for="currency in rates" :value="rates">{{rates.name}}</option>
+          </select>
+    </div>
+
+
+
+
+
 
 </body>
 </html>
