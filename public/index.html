@@ -8,6 +8,19 @@
   <script src="./js/bundle.js"></script>
 </head>
 <body>
+  <h1>Currency Converter</h1>
+
+  <div id="app">
+
+    <h2>Live Exchange Rates</h2>
+
+      <ul id="rates" class="ratesList">
+        <li v-for="(value, name) in object">
+          {{name}}:{{ value }}
+        </li>
+      </ul>
+      
+  </div>
 
 </body>
 </html>
